@@ -1,10 +1,7 @@
 language: node_js
+
 node_js:
   - '7'
-
-env:
-  global:
-    - SECRET=oiuhwuiljywhduilw397wehwjk
 
 after_success:
   - npm run coverage
