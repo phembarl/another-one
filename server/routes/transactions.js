@@ -6,7 +6,7 @@ import accountsMidware from '../middleware/accountsMidware';
 const transactionsRouter = express.Router();
 
 transactionsRouter.get('/transactions', transaction.getTransactions);
-transactionsRouter.post('/transactions/:accountNumber/credit', validTransaction, accountsMidware.canFind, transaction.credit);
-transactionsRouter.post('/transactions/:accountNumber/debit', validTransaction, accountsMidware.canFind, transaction.debit);
+transactionsRouter.post('/transactions/:accountNumber/:transact', validTransaction,
+  accountsMidware.isTransaction, accountsMidware.canFind, transaction.transact);
 
 export default transactionsRouter;
